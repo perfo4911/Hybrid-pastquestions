@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../common/mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "mongod",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongod",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongod",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongod",
+    "public": false
+  },
+  "Customer": {
+    "dataSource": "mongod",
+    "public": true
+  },
+  "forum": {
+    "dataSource": "mongod",
+    "public": true
+  },
+  "paper": {
+    "dataSource": "mongod",
+    "public": true
+  },
+  "year": {
+    "dataSource": "mongod",
+    "public": true
+  },
+  "subject": {
+    "dataSource": "mongod",
+    "public": true
+  },
+  "level": {
+    "dataSource": "mongod",
+    "public": true
+  },
+  "comment": {
+    "dataSource": "mongod",
+    "public": true
+  }
+}

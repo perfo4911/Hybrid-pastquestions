@@ -1,0 +1,35 @@
+<ion-view title="Paper" id="page3" class=" ">
+    <ion-content padding="true" class="has-header">
+        <h2 id="oL-heading6" style="color:#000000;text-align:center;" class=" ">Search paper</h2>
+        <form id="oL-form3" class="list " ng-submit="search()">
+            <label class="item item-select " id="oL-select2">
+                <span class="input-label">Level</span>
+                <select ng-model="levelId">
+                     <option value="{{level.id}}" ng-repeat="level in levels">{{level.name}}</option>
+                </select>
+            </label>
+            <label class="item item-select " id="oL-select3">
+                <span class="input-label">Subject</span>
+                <select ng-model="subject_id" name="subjects">
+                   <option ng-repeat="subject in subjects" value="2">{{subject.name}}</option>
+                </select>
+            </label>
+            <label class="item item-select " id="oL-select4">
+                <span class="input-label">Year</span>
+                <select ng-model="year_id">
+                    <option value="{{year.id}}" ng-repeat="year in years">{{year.name}}</option>
+                </select>
+            </label>
+            
+        </form>
+        <button id="oL-button2"  class=" button button-positive  button-block icon ion-android-search " ng-click="search()"> search</button>
+        {{papers}}
+        <ul class="list">
+    <li class="item" ng-repeat="paper in papers">
+      <a href="">{{paper.url}}</a>
+        {{paper.level.name}} / {{paper.subject.name}} / {{paper.year.name}}
+    </li>
+            
+</ul>
+    </ion-content>
+</ion-view>

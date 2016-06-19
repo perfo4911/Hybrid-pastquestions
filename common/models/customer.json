@@ -1,0 +1,68 @@
+{
+  "name": "Customer",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "mysql": {
+      "table": "customer"
+    },
+    "mongodb": {
+      "collection": "customer"
+    },
+    "oracle": {
+      "schema": "DEMO",
+      "table": "CUSTOMER"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true,
+      "length": 20,
+      "oracle": {
+        "columnName": "ID",
+        "dataType": "VARCHAR2",
+        "dataLength": 20,
+        "nullable": "N"
+      }
+    },
+    "name": {
+      "type": "String",
+      "length": 40,
+      "oracle": {
+        "columnName": "NAME",
+        "dataType": "VARCHAR2",
+        "dataLength": 40,
+        "nullable": "Y"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {
+    "comment": {
+      "type": "hasMany",
+      "model": "comment",
+      "foreignKey": ""
+    },
+    "forum": {
+      "type": "hasMany",
+      "model": "forum",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

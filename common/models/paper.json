@@ -1,0 +1,38 @@
+{
+  "name": "paper",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "paperno": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "level": {
+      "type": "belongsTo",
+      "model": "level",
+      "foreignKey": "level_id"
+    },
+    "subject": {
+      "type": "belongsTo",
+      "model": "subject",
+      "foreignKey": "subject_id"
+    },
+    "year": {
+      "type": "belongsTo",
+      "model": "year",
+      "foreignKey": "year_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

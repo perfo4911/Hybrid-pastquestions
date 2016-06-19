@@ -1,0 +1,22 @@
+<ion-view title="Discussion Detail" id="page4" class=" ">
+    <ion-content padding="true" class="has-header">
+        <div class="card">
+           <div class="item item-divider">
+               {{article.title}}
+            </div>
+            <div class="item item-text-wrap">
+               {{article.description}}
+            </div>
+            <div class="item item-divider">
+               <span class="pull-right"><em>Posted By {{article.customer.username}}</em></span>
+            </div>
+        </div>
+        <h2 >Comments</h2>
+        <blockquote ng-repeat="comment in article.comment ">
+                    {{comment.comment}}
+                    <small>{{comment.createdAt|date:"MMM d y"}} | {{comment.customer.username}}</small>
+                </blockquote>
+        <h3>Comment</h3>
+        <span> <a href="http://pastquestions-revision.rhcloud.com/#/forum/{{article.id}}" >go to</a> and comment</span>
+    </ion-content>
+</ion-view>
